@@ -22,8 +22,8 @@ if(file.mimetype !== "image/png") {
 }
 }
 const upload = multer({
-    fileFilter: fileFilter(),
-    storage: storage
+    fileFilter,
+    storage
 })
 router.post("/upload", upload.single("photo"), (request, response) => {
 if(request.fileValidationError) {
